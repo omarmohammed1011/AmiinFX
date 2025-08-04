@@ -250,32 +250,13 @@ export default function DashboardPage() {
 
           {/* Responsive Card Grid */}
           <div
-            className="
-              w-full
-              max-w-[400px]
-              mx-auto
-              grid
-              grid-cols-2
-              gap-4
-              sm:grid-cols-2
-              md:grid-cols-3
-              lg:grid-cols-4
-              mb-3
-              sm:mb-6
-              px-0
-              justify-items-center
-              custom-grid-cols
-            "
-            style={{
-              gridTemplateColumns: 'repeat(2, minmax(140px, 1fr))',
-              maxWidth: '100vw',
-              overflowX: 'hidden',
-            }}
+            className={`${styles.dashboardGrid} w-full mx-auto mb-3 sm:mb-6 px-0 justify-items-center`}
           >
             {dashboardCards.map((card) => (
               <Link key={card.title} href={card.href} className="w-full flex justify-center">
                 <Card
-                  className="
+                  className={`
+                    ${styles.dashboardCard}
                     bg-[#1E1E2F]
                     border-none
                     shadow-md
@@ -293,18 +274,18 @@ export default function DashboardPage() {
                     p-3
                     hover:ring-2 hover:ring-blue-500/40
                     active:ring-2 active:ring-blue-600/60
-                  "
+                  `}
                 >
                   <CardContent className="p-0 flex flex-col items-center justify-center w-full h-full">
                     <div
-                      className={`w-9 h-9 rounded-lg ${card.iconBg} flex items-center justify-center mb-2 group-hover:scale-105 transition-transform duration-200 shadow`}
+                      className={`${styles.dashboardCardIcon} w-9 h-9 rounded-lg ${card.iconBg} flex items-center justify-center mb-2 group-hover:scale-105 transition-transform duration-200 shadow`}
                     >
                       <card.icon className="h-5 w-5 text-white" />
                     </div>
-                    <h3 className="text-[16px] font-bold text-white mb-1 leading-tight text-center w-full truncate">
+                    <h3 className={`${styles.dashboardCardTitle} text-[16px] font-bold text-white mb-1 leading-tight text-center w-full truncate`}>
                       {card.title}
                     </h3>
-                    <p className="text-[13px] text-gray-400 leading-snug text-center w-full line-clamp-2">
+                    <p className={`${styles.dashboardCardSubtitle} text-[13px] text-gray-400 leading-snug text-center w-full line-clamp-2`}>
                       {card.subtitle}
                     </p>
                   </CardContent>
