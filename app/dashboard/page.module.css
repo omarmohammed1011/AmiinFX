@@ -56,13 +56,4 @@
     width: 100%;
     line-height: 1.2;
   }
-
-  /* Remove extra white space at bottom */
-  html,
-  body {
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
-    width: 100vw;
-  }
 }
