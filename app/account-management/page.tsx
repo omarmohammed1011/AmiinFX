@@ -69,218 +69,97 @@ export default function AccountManagementPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="flex items-center mb-8">
-          <Link href="/dashboard" className="mr-4">
-            <Button
-              variant="outline"
-              size="sm"
-              className="border-gray-600 text-gray-300 hover:bg-gray-700 bg-transparent"
-            >
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              Back to Dashboard
-            </Button>
-          </Link>
-        </div>
-
-        {/* Header */}
+    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center justify-center px-4 py-8">
+      <div className="w-full max-w-2xl mx-auto">
+        {/* Step 1: Headline */}
         <Card className="bg-gray-800 border-gray-700 mb-8">
-          <CardContent className="p-8">
-            <div className="flex items-center mb-4">
-              <div className="w-12 h-12 bg-cyan-500 rounded-lg flex items-center justify-center mr-4">
-                <UserCheck className="h-6 w-6 text-white" />
+          <CardContent className="p-8 text-center">
+            <div className="flex flex-col items-center">
+              <div className="w-14 h-14 bg-cyan-500 rounded-lg flex items-center justify-center mb-4">
+                <UserCheck className="h-7 w-7 text-white" />
               </div>
-              <div>
-                <h1 className="text-3xl font-bold">
-                  Let <span className="text-cyan-400">Amiin FX</span> Manage Your Trades
-                </h1>
-                <p className="text-gray-400 mt-2">
-                  Gain passive income while Amiin FX handles your trading using advanced strategies and risk management.
-                </p>
-              </div>
+              <h1 className="text-3xl md:text-4xl font-bold mb-2">
+                Let Amiin Trade for You — <span className="text-cyan-400">Share the Profits, Not the Stress</span>
+              </h1>
             </div>
           </CardContent>
         </Card>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Left Column - Benefits */}
-          <div className="space-y-6">
-            {/* Key Benefits */}
-            <Card className="bg-gray-800 border-gray-700">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-white mb-6">Why Choose Account Management?</h3>
-                <div className="space-y-4">
-                  <div className="flex items-start">
-                    <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-4 mt-1">
-                      <Check className="h-4 w-4 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-white mb-1">Monthly Performance Updates</h4>
-                      <p className="text-gray-400 text-sm">Detailed reports on your account's performance and growth</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-4 mt-1">
-                      <Check className="h-4 w-4 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-white mb-1">Manual & Automated Options</h4>
-                      <p className="text-gray-400 text-sm">
-                        Choose between hands-on manual trading or automated systems
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center mr-4 mt-1">
-                      <Check className="h-4 w-4 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-white mb-1">Professional Risk Management</h4>
-                      <p className="text-gray-400 text-sm">Advanced risk controls to protect your capital</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center mr-4 mt-1">
-                      <Check className="h-4 w-4 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-white mb-1">Transparent Operations</h4>
-                      <p className="text-gray-400 text-sm">Full visibility into all trades and strategies used</p>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+        {/* Step 2: Intro Paragraph */}
+        <Card className="bg-gray-800 border-gray-700 mb-6">
+          <CardContent className="p-6">
+            <p className="text-lg text-gray-300 mb-2">
+              Experience hands-free trading with Amiin FX’s professional account management. Simply fund your trading account and let Amiin FX handle the rest—no charts, no stress, no guesswork. Our expertise and proven strategies work for you, so you can focus on what matters most while your capital is actively traded for maximum results.
+            </p>
+          </CardContent>
+        </Card>
 
-            {/* Performance Stats */}
-            <Card className="bg-gradient-to-r from-green-900/20 to-blue-900/20 border-green-700">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-white mb-4">Track Record</h3>
-                <div className="grid grid-cols-3 gap-4">
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-green-400">85%</div>
-                    <div className="text-gray-400 text-sm">Win Rate</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-blue-400">2.5:1</div>
-                    <div className="text-gray-400 text-sm">Risk/Reward</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-purple-400">15%</div>
-                    <div className="text-gray-400 text-sm">Monthly ROI</div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+        {/* Step 3: 50/50 Profit Split Model */}
+        <Card className="bg-gray-800 border-gray-700 mb-6">
+          <CardContent className="p-6">
+            <h2 className="text-xl font-bold text-cyan-400 mb-2">Fair and Transparent: 50/50 Profit Split</h2>
+            <p className="text-gray-300">
+              At the end of each trading cycle—weekly, bi-weekly, or monthly—you and Amiin FX split the net profits 50/50. You provide the capital, we provide the expertise. There are no hidden fees, and you only pay when you profit.
+            </p>
+          </CardContent>
+        </Card>
 
-          {/* Right Column - Management Plans */}
-          <div className="space-y-6">
-            {managementPlans.map((plan) => (
-              <Card key={plan.name} className="bg-gray-800 border-gray-700">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    <div className={`w-12 h-12 ${plan.color} rounded-lg flex items-center justify-center mr-4`}>
-                      <plan.icon className="h-6 w-6 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-white">{plan.name}</h3>
-                      <p className="text-2xl font-bold text-cyan-400">{plan.price}</p>
-                    </div>
-                  </div>
+        {/* Step 4: Trust & Security */}
+        <Card className="bg-gray-800 border-gray-700 mb-6">
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold text-white mb-2">Your Security & Control</h3>
+            <p className="text-gray-300 mb-2">
+              You retain full control and visibility over your trading account at all times. All trading activity is conducted transparently, and you can withdraw your funds whenever you wish (subject to broker terms). Your trust and peace of mind are our top priorities.
+            </p>
+          </CardContent>
+        </Card>
 
-                  <p className="text-gray-300 mb-6">{plan.description}</p>
+        {/* Step 5: FAQ Bullets */}
+        <Card className="bg-gray-800 border-gray-700 mb-6">
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold text-white mb-4">Frequently Asked Questions</h3>
+            <ul className="list-disc pl-5 space-y-2 text-gray-300">
+              <li><span className="font-semibold text-white">Minimum deposit amount?</span> $5,000</li>
+              <li><span className="font-semibold text-white">How long does the profit cycle last?</span> Choose weekly, bi-weekly, or monthly cycles.</li>
+              <li><span className="font-semibold text-white">Can I monitor my account?</span> Yes, you have full access and visibility at all times.</li>
+              <li><span className="font-semibold text-white">How is profit withdrawal handled?</span> Profits are split and paid out at the end of each cycle.</li>
+              <li><span className="font-semibold text-white">Can I stop at any time?</span> Yes, you can stop or withdraw funds whenever you wish (subject to broker terms).</li>
+            </ul>
+          </CardContent>
+        </Card>
 
-                  <div className="space-y-3 mb-6">
-                    {plan.features.map((feature, index) => (
-                      <div key={index} className="flex items-center">
-                        <Check className="h-4 w-4 text-green-400 mr-3" />
-                        <span className="text-gray-300 text-sm">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
+        {/* Step 6: Closing Statement */}
+        <Card className="bg-gray-800 border-gray-700 mb-8">
+          <CardContent className="p-6 text-center">
+            <p className="text-lg text-cyan-400 font-semibold mb-4">
+              Start your hands-free trading journey today with a trusted professional by your side. Let your money work for you while we do the trading.
+            </p>
 
-                  <Button
-                    onClick={() => handleApply(plan.name)}
-                    disabled={selectedPlan === plan.name}
-                    className={`w-full ${plan.color} hover:opacity-90 text-white font-bold py-3`}
-                  >
-                    {selectedPlan === plan.name ? "APPLYING..." : `APPLY FOR ${plan.name.toUpperCase()}`}
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-
-            {/* Application Form */}
-            <Card className="bg-gray-800 border-gray-700">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-white mb-6">Account Information</h3>
-                <div className="space-y-4">
-                  <div>
-                    <Label htmlFor="accountSize" className="text-white">
-                      Account Size (USD)
-                    </Label>
-                    <Input
-                      id="accountSize"
-                      name="accountSize"
-                      type="number"
-                      value={formData.accountSize}
-                      onChange={handleInputChange}
-                      className="mt-1 bg-gray-700 border-gray-600 text-white"
-                      placeholder="e.g., 10000"
-                    />
-                  </div>
-
-                  <div>
-                    <Label htmlFor="riskTolerance" className="text-white">
-                      Risk Tolerance
-                    </Label>
-                    <select
-                      id="riskTolerance"
-                      name="riskTolerance"
-                      value={formData.riskTolerance}
-                      onChange={handleInputChange}
-                      className="mt-1 w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-white"
-                    >
-                      <option value="conservative">Conservative (1-2% risk)</option>
-                      <option value="moderate">Moderate (2-3% risk)</option>
-                      <option value="aggressive">Aggressive (3-5% risk)</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <Label htmlFor="tradingExperience" className="text-white">
-                      Trading Experience (Years)
-                    </Label>
-                    <Input
-                      id="tradingExperience"
-                      name="tradingExperience"
-                      type="number"
-                      value={formData.tradingExperience}
-                      onChange={handleInputChange}
-                      className="mt-1 bg-gray-700 border-gray-600 text-white"
-                      placeholder="e.g., 2"
-                    />
-                  </div>
-                </div>
-
-                <div className="mt-6 p-4 bg-blue-900/20 border border-blue-700 rounded-lg">
-                  <div className="flex items-center mb-2">
-                    <Shield className="h-5 w-5 text-blue-400 mr-2" />
-                    <span className="text-blue-400 font-semibold">Minimum Requirements</span>
-                  </div>
-                  <ul className="text-gray-300 text-sm space-y-1">
-                    <li>• Minimum account size: $5,000</li>
-                    <li>• Account must be with approved brokers</li>
-                    <li>• Full account access required</li>
-                    <li>• Performance fee only charged on profits</li>
-                  </ul>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
+            {/* Step 7: CTA Buttons */}
+            <div className="flex flex-col md:flex-row gap-4 justify-center">
+              <a
+                href="https://t.me/amiin_fx10"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full md:w-auto"
+              >
+                <Button className="w-full bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 text-lg flex items-center justify-center">
+                  Message Us on Telegram
+                </Button>
+              </a>
+              <a
+                href="https://wa.me/254111532085"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full md:w-auto"
+              >
+                <Button className="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 text-lg flex items-center justify-center">
+                  Chat via WhatsApp
+                </Button>
+              </a>
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </div>
   )
