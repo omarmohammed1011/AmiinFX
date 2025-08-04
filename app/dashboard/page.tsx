@@ -235,54 +235,78 @@ export default function DashboardPage() {
         </header>
 
         {/* Main Dashboard Content */}
-        <main className="px-4 sm:p-6">
+        <main className="px-2 sm:px-4 pt-3 pb-6 max-w-full overflow-x-hidden">
           {/* Welcome Card */}
-          <Card className="bg-gray-800 border-gray-700 mb-3 sm:mb-6 max-w-[400px] mx-auto">
-            <CardContent className="p-3">
-              <h2 className="text-sm sm:text-base font-bold mb-1 flex items-center">
+          <Card className="bg-gray-800 border-gray-700 mb-2 mx-auto max-w-[360px] sm:mb-4 sm:max-w-[400px] shadow-none">
+            <CardContent className="p-3 sm:p-4">
+              <h2 className="text-base sm:text-lg font-bold mb-0 flex items-center justify-center">
                 Welcome back, {user.displayName?.split(" ")[0] || "User"}!<span className="ml-2">👋</span>
               </h2>
-              <p className="text-gray-400 text-xs sm:text-sm">
+              <p className="text-gray-400 text-xs sm:text-sm text-center mt-1">
                 Here's your complete navigation hub. Click any card to access that section.
               </p>
             </CardContent>
           </Card>
 
+          {/* Responsive Card Grid */}
           <div
             className="
               w-full
-              max-w-md
+              max-w-[400px]
               mx-auto
-              lg:max-w-full
-              lg:mx-0
               grid
               grid-cols-2
+              gap-4
               sm:grid-cols-2
               md:grid-cols-3
               lg:grid-cols-4
-              gap-4
               mb-3
               sm:mb-6
-              px-2
-              sm:px-4
-              lg:px-0
+              px-0
               justify-items-center
               custom-grid-cols
             "
+            style={{
+              gridTemplateColumns: 'repeat(2, minmax(140px, 1fr))',
+              maxWidth: '100vw',
+              overflowX: 'hidden',
+            }}
           >
             {dashboardCards.map((card) => (
-              <Link key={card.title} href={card.href}>
-                <Card className="bg-gray-800 border-gray-700 hover:bg-gray-750 transition-all duration-300 cursor-pointer group h-auto min-h-[110px] lg:min-h-[160px] shadow-md hover:shadow-lg rounded-lg flex flex-col items-center justify-center">
-                  <CardContent className="p-4 lg:p-5 flex flex-col items-center justify-center w-full">
+              <Link key={card.title} href={card.href} className="w-full flex justify-center">
+                <Card
+                  className="
+                    bg-[#1E1E2F]
+                    border-none
+                    shadow-md
+                    hover:shadow-lg
+                    transition-all
+                    duration-200
+                    cursor-pointer
+                    group
+                    h-[130px]
+                    sm:h-[150px]
+                    w-full
+                    max-w-[170px]
+                    rounded-xl
+                    flex flex-col items-center justify-center
+                    p-3
+                    hover:ring-2 hover:ring-blue-500/40
+                    active:ring-2 active:ring-blue-600/60
+                  "
+                >
+                  <CardContent className="p-0 flex flex-col items-center justify-center w-full h-full">
                     <div
-                      className={`w-8 h-8 rounded-md ${card.iconBg} flex items-center justify-center mb-2 group-hover:scale-105 transition-transform duration-200 shadow`}
+                      className={`w-9 h-9 rounded-lg ${card.iconBg} flex items-center justify-center mb-2 group-hover:scale-105 transition-transform duration-200 shadow`}
                     >
                       <card.icon className="h-5 w-5 text-white" />
                     </div>
-                    <h3 className="text-xs font-semibold text-white mb-1 leading-tight text-center w-full truncate">
+                    <h3 className="text-[16px] font-bold text-white mb-1 leading-tight text-center w-full truncate">
                       {card.title}
                     </h3>
-                    <p className="text-[11px] text-gray-400 leading-relaxed text-center w-full line-clamp-2">{card.subtitle}</p>
+                    <p className="text-[13px] text-gray-400 leading-snug text-center w-full line-clamp-2">
+                      {card.subtitle}
+                    </p>
                   </CardContent>
                 </Card>
               </Link>
@@ -290,9 +314,9 @@ export default function DashboardPage() {
           </div>
 
           {/* Additional Info */}
-          <div className="max-w-md mx-auto lg:max-w-full lg:mx-0 p-3 bg-blue-600/10 border border-blue-600/20 rounded-lg shadow-inner">
-            <h3 className="text-sm font-semibold text-blue-400 mb-1">Welcome to Amiin FX Dashboard!</h3>
-            <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">
+          <div className="max-w-[400px] mx-auto p-3 bg-blue-600/10 border border-blue-600/20 rounded-lg shadow-inner">
+            <h3 className="text-sm font-semibold text-blue-400 mb-1 text-center">Welcome to Amiin FX Dashboard!</h3>
+            <p className="text-gray-300 text-xs sm:text-sm leading-relaxed text-center">
               Your complete trading education and mentorship platform. Navigate through different sections using the
               cards above or the sidebar menu. Each section is designed to help you on your journey to becoming a
               profitable trader.
