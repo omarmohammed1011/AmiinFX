@@ -248,11 +248,11 @@ export default function DashboardPage() {
           </Card>
 
           {/* Dashboard Cards Grid - Responsive: 2 cols mobile, 3 cols tablet, 4 cols desktop */}
-          <div className="w-full max-w-[400px] mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-3 gap-y-3 mb-3 sm:mb-6 px-4">
+          <div className="w-full max-w-md mx-auto lg:max-w-full lg:mx-0 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-3 gap-y-3 lg:gap-x-6 mb-3 sm:mb-6 px-4 lg:px-0">
             {dashboardCards.map((card) => (
               <Link key={card.title} href={card.href}>
-                <Card className="bg-gray-800 border-gray-700 hover:bg-gray-750 transition-all duration-300 cursor-pointer group h-auto min-h-[110px] shadow-md hover:shadow-lg rounded-lg">
-                  <CardContent className="p-4 flex flex-col justify-center">
+                <Card className="bg-gray-800 border-gray-700 hover:bg-gray-750 transition-all duration-300 cursor-pointer group h-auto min-h-[110px] lg:min-h-[160px] shadow-md hover:shadow-lg rounded-lg">
+                  <CardContent className="p-4 lg:p-5 flex flex-col justify-center">
                     <div
                       className={`w-6 h-6 rounded-md ${card.iconBg} flex items-center justify-center mb-2 group-hover:scale-105 transition-transform duration-200 shadow`}
                     >
@@ -269,7 +269,7 @@ export default function DashboardPage() {
           </div>
 
           {/* Additional Info */}
-          <div className="max-w-[400px] mx-auto p-3 bg-blue-600/10 border border-blue-600/20 rounded-lg shadow-inner">
+          <div className="max-w-md mx-auto lg:max-w-full lg:mx-0 p-3 bg-blue-600/10 border border-blue-600/20 rounded-lg shadow-inner">
             <h3 className="text-sm font-semibold text-blue-400 mb-1">Welcome to Amiin FX Dashboard!</h3>
             <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">
               Your complete trading education and mentorship platform. Navigate through different sections using the
