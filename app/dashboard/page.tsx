@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import styles from "./page.module.css"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -247,21 +248,41 @@ export default function DashboardPage() {
             </CardContent>
           </Card>
 
-          {/* Dashboard Cards Grid - Responsive: 2 cols mobile, 3 cols tablet, 4 cols desktop */}
-          <div className="w-full max-w-md mx-auto lg:max-w-full lg:mx-0 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-3 gap-y-3 lg:gap-x-6 mb-3 sm:mb-6 px-4 lg:px-0">
+          <div
+            className="
+              w-full
+              max-w-md
+              mx-auto
+              lg:max-w-full
+              lg:mx-0
+              grid
+              grid-cols-2
+              sm:grid-cols-2
+              md:grid-cols-3
+              lg:grid-cols-4
+              gap-4
+              mb-3
+              sm:mb-6
+              px-2
+              sm:px-4
+              lg:px-0
+              justify-items-center
+              custom-grid-cols
+            "
+          >
             {dashboardCards.map((card) => (
               <Link key={card.title} href={card.href}>
-                <Card className="bg-gray-800 border-gray-700 hover:bg-gray-750 transition-all duration-300 cursor-pointer group h-auto min-h-[110px] lg:min-h-[160px] shadow-md hover:shadow-lg rounded-lg">
-                  <CardContent className="p-4 lg:p-5 flex flex-col justify-center">
+                <Card className="bg-gray-800 border-gray-700 hover:bg-gray-750 transition-all duration-300 cursor-pointer group h-auto min-h-[110px] lg:min-h-[160px] shadow-md hover:shadow-lg rounded-lg flex flex-col items-center justify-center">
+                  <CardContent className="p-4 lg:p-5 flex flex-col items-center justify-center w-full">
                     <div
-                      className={`w-6 h-6 rounded-md ${card.iconBg} flex items-center justify-center mb-2 group-hover:scale-105 transition-transform duration-200 shadow`}
+                      className={`w-8 h-8 rounded-md ${card.iconBg} flex items-center justify-center mb-2 group-hover:scale-105 transition-transform duration-200 shadow`}
                     >
-                      <card.icon className="h-4 w-4 text-white" />
+                      <card.icon className="h-5 w-5 text-white" />
                     </div>
-                    <h3 className="text-xs font-semibold text-white mb-0.5 leading-tight truncate">
+                    <h3 className="text-xs font-semibold text-white mb-1 leading-tight text-center w-full truncate">
                       {card.title}
                     </h3>
-                    <p className="text-[11px] text-gray-400 leading-relaxed line-clamp-2">{card.subtitle}</p>
+                    <p className="text-[11px] text-gray-400 leading-relaxed text-center w-full line-clamp-2">{card.subtitle}</p>
                   </CardContent>
                 </Card>
               </Link>
