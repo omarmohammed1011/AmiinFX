@@ -76,7 +76,7 @@ export default function TradePage() {
             </ul>
             <div className="flex justify-center mt-8">
               <a
-                href="https://l.instagram.com/?u=https%3A%2F%2Fone.exnesstrack.net%2Fa%2Fs9kt83jjp8%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAaccjmIXTQMZ2ZS1W8IbLd075J8wouwDbJknNZClgKzMNVmqpdJxAkdCpMQmGw_aem_Jcyoqz0rqqJTstfSd7T5Dg&e=AT0YJ8JvR-21ogayloSkGmCMQjNVRfZD9PXDJ08QP8pGaNYl3DUhc9zf44qq9vjGF9YfjT7W3pQ7IsgVWY51nYH_cWpvRN5kUhiApz4"
+                href=":https://www.exness.ke/?utm_source=partners&fbclid=PAZXh0bgNhZW0CMTEAAaccjmIXTQMZ2ZS1W8IbLd075J8wouwDbJknNZClgKzMNVmqpdJxAkdCpMQmGw_aem_Jcyoqz0rqqJTstfSd7T5Dg&ex_ol=1"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full md:w-auto"
