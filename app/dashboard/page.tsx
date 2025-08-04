@@ -164,7 +164,7 @@ export default function DashboardPage() {
           <Link href="/" className="text-xl font-bold text-blue-400">
             Amiin FX
           </Link>
-          <button onClick={() => setSidebarOpen(false)} className="lg:hidden text-gray-400 hover:text-white">
+          <button onClick={() => setSidebarOpen(false)} className="lg:hidden text-gray-400 hover:text-white" title="Close sidebar">
             <X className="h-6 w-6" />
           </button>
         </div>
@@ -196,72 +196,72 @@ export default function DashboardPage() {
       {/* Main Content */}
       <div className="flex-1 lg:ml-0">
         {/* Header */}
-        <header className="bg-gray-800 border-b border-gray-700 h-16 flex items-center justify-between px-4">
+        <header className="bg-gray-800 border-b border-gray-700 h-14 flex items-center justify-between px-3 sm:px-4">
           <div className="flex items-center">
-            <button onClick={() => setSidebarOpen(true)} className="lg:hidden text-gray-400 hover:text-white mr-4">
-              <Menu className="h-6 w-6" />
+            <button onClick={() => setSidebarOpen(true)} className="lg:hidden text-gray-400 hover:text-white mr-3" title="Open sidebar">
+              <Menu className="h-5 w-5" />
             </button>
-            <h1 className="text-xl font-semibold">Dashboard</h1>
+            <h1 className="text-base font-semibold">Dashboard</h1>
           </div>
 
-          <div className="flex items-center space-x-4">
-            <Button className="bg-blue-600 hover:bg-blue-700 text-sm">
-              <Badge className="bg-red-500 text-white text-xs mr-2">NEW</Badge>
+          <div className="flex items-center space-x-3">
+            <Button className="bg-blue-600 hover:bg-blue-700 text-xs px-2 py-1 h-8 min-w-[80px] flex items-center">
+              <Badge className="bg-red-500 text-white text-xs mr-1 px-1 py-0.5">NEW</Badge>
               Forecast
             </Button>
-            <button className="text-gray-400 hover:text-white">
-              <Settings className="h-5 w-5" />
+            <button className="text-gray-400 hover:text-white" title="Settings">
+              <Settings className="h-4 w-4" />
             </button>
-            <button className="text-gray-400 hover:text-white relative">
-              <Bell className="h-5 w-5" />
-              <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">
+            <button className="text-gray-400 hover:text-white relative" title="Notifications">
+              <Bell className="h-4 w-4" />
+              <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] rounded-full h-3 w-3 flex items-center justify-center">
                 1
               </span>
             </button>
             <div className="flex items-center space-x-2">
               <div className="text-right">
-                <p className="text-sm font-medium">{user.displayName || "User"}</p>
-                <p className="text-xs text-gray-400">{user.email}</p>
+                <p className="text-xs font-medium">{user.displayName || "User"}</p>
+                <p className="text-[10px] text-gray-400">{user.email}</p>
               </div>
-              <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
-                <User className="h-4 w-4" />
+              <div className="w-7 h-7 bg-blue-600 rounded-full flex items-center justify-center">
+                <User className="h-3.5 w-3.5" />
               </div>
-              <button onClick={handleLogout} className="text-gray-400 hover:text-white">
-                <LogOut className="h-4 w-4" />
+              <button onClick={handleLogout} className="text-gray-400 hover:text-white" title="Log out">
+                <LogOut className="h-3.5 w-3.5" />
               </button>
             </div>
           </div>
         </header>
 
         {/* Main Dashboard Content */}
-        <main className="p-4 sm:p-6">
+        <main className="px-4 sm:p-6">
           {/* Welcome Card */}
-          <Card className="bg-gray-800 border-gray-700 mb-6 sm:mb-8">
-            <CardContent className="p-4 sm:p-6">
-              <h2 className="text-xl sm:text-2xl font-bold mb-2 flex items-center">
+          <Card className="bg-gray-800 border-gray-700 mb-4 sm:mb-8 max-w-md mx-auto">
+            <CardContent className="p-4">
+              <h2 className="text-base sm:text-lg font-bold mb-1 flex items-center">
                 Welcome back, {user.displayName?.split(" ")[0] || "User"}!<span className="ml-2">👋</span>
               </h2>
-              <p className="text-gray-400 text-sm sm:text-base">
+              <p className="text-gray-400 text-xs sm:text-sm">
                 Here's your complete navigation hub. Click any card to access that section.
               </p>
             </CardContent>
           </Card>
 
           {/* Dashboard Cards Grid - Responsive: 2 cols mobile, 3 cols tablet, 4 cols desktop */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 mb-6 sm:mb-8">
+          <div className="w-full max-w-md mx-auto lg:max-w-full grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-4 lg:gap-x-6 mb-4 sm:mb-8">
             {dashboardCards.map((card) => (
               <Link key={card.title} href={card.href}>
-                <Card className="bg-gray-800 border-gray-700 hover:bg-gray-750 transition-all duration-300 cursor-pointer group h-full shadow-lg hover:shadow-xl">
-                  <CardContent className="p-3 sm:p-4 lg:p-6">
+                <Card className="bg-gray-800 border-gray-700 hover:bg-gray-750 transition-all duration-300 cursor-pointer group h-auto min-h-[120px] lg:min-h-[160px] shadow-md hover:shadow-lg rounded-lg">
+                  <CardContent className="p-4 lg:p-5 flex flex-col justify-center">
                     <div
-                      className={`w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-lg ${card.iconBg} flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300 shadow-md`}
+                      className={`w-7 h-7 rounded-md ${card.iconBg} flex items-center justify-center mb-2 group-hover:scale-105 transition-transform duration-200 shadow`}
                     >
-                      <card.icon className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 text-white" />
+                      <card.icon className="h-5 w-5 text-white" />
                     </div>
-                    <h3 className="text-sm sm:text-base lg:text-lg font-semibold text-white mb-1 sm:mb-2 leading-tight">
+                    <h3 className="text-sm font-semibold text-white mb-0.5 leading-tight truncate">
                       {card.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-gray-400 leading-relaxed line-clamp-2">{card.subtitle}</p>
+                    <p className="text-xs text-gray-400 leading-relaxed line-clamp-2">{card.subtitle}</p>
                   </CardContent>
                 </Card>
               </Link>
@@ -269,9 +269,9 @@ export default function DashboardPage() {
           </div>
 
           {/* Additional Info */}
-          <div className="p-4 sm:p-6 bg-blue-600/10 border border-blue-600/20 rounded-lg shadow-inner">
-            <h3 className="text-lg font-semibold text-blue-400 mb-2">Welcome to Amiin FX Dashboard!</h3>
-            <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+          <div className="max-w-md mx-auto p-4 bg-blue-600/10 border border-blue-600/20 rounded-lg shadow-inner">
+            <h3 className="text-base font-semibold text-blue-400 mb-1">Welcome to Amiin FX Dashboard!</h3>
+            <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">
               Your complete trading education and mentorship platform. Navigate through different sections using the
               cards above or the sidebar menu. Each section is designed to help you on your journey to becoming a
               profitable trader.
