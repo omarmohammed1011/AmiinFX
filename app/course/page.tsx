@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -13,12 +14,14 @@ export default function CoursePage() {
   const [selectedCategory, setSelectedCategory] = useState("All Categories")
   const [selectedLevel, setSelectedLevel] = useState("All Levels")
   const [isPurchasing, setIsPurchasing] = useState(false)
+  const [showSuccess, setShowSuccess] = useState(false)
+  const router = useRouter()
 
   const handlePurchase = () => {
     setIsPurchasing(true)
     setTimeout(() => {
-      alert("Course purchased successfully! You now have access to Master Sniper Entries.")
       setIsPurchasing(false)
+      setShowSuccess(true)
     }, 2000)
   }
 
@@ -32,7 +35,7 @@ export default function CoursePage() {
     <div className="min-h-screen bg-gray-900 text-white">
       {/* Hero Section for Master Sniper Entries */}
       <section className="relative w-full bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 pb-12 pt-8 md:pt-16 mb-10 flex items-center justify-center">
-        <div className="absolute inset-0 opacity-20 bg-cover bg-center" style={{backgroundImage: 'url(/images/kojoforex-design.png)'}} />
+        <div className="absolute inset-0 opacity-20 bg-cover bg-center kojoforex-bg" />
         <div className="relative z-10 w-full max-w-3xl mx-auto px-4 text-center flex flex-col items-center">
           {/* Amiin FX Logo (optional) */}
           <img src="/placeholder-logo.png" alt="Amiin FX Logo" className="w-16 h-16 mb-4 rounded-lg shadow-lg" />
@@ -57,6 +60,25 @@ export default function CoursePage() {
           <blockquote className="text-cyan-400 italic text-base md:text-lg mt-2">“Master the markets, one sniper entry at a time.”</blockquote>
         </div>
       </section>
+
+      {/* Success Section after Purchase */}
+      {showSuccess && (
+        <section className="w-full flex items-center justify-center px-4 py-8">
+          <div className="max-w-xl w-full bg-gradient-to-br from-green-900 via-black to-blue-900 rounded-xl shadow-lg p-8 text-center border-2 border-green-500">
+            <img src="/placeholder-logo.png" alt="Amiin FX Logo" className="w-14 h-14 mx-auto mb-4 rounded-lg" />
+            <h2 className="text-3xl font-bold text-green-400 mb-2">Congratulations!</h2>
+            <p className="text-lg text-white mb-4">You now have instant access to <span className="font-bold text-cyan-400">Master Sniper Entries</span>.</p>
+            <p className="text-gray-300 mb-6">Check your dashboard for course materials, video lessons, and your exclusive PDF download.</p>
+            <Button
+              className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 text-lg rounded-lg shadow-lg mb-2"
+              onClick={() => router.push("/course/dashboard")}
+            >
+              Go to Course Dashboard
+            </Button>
+            <blockquote className="text-cyan-400 italic text-base md:text-lg mt-2">“Master the markets, one sniper entry at a time.”</blockquote>
+          </div>
+        </section>
+      )}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* ...existing code... */}

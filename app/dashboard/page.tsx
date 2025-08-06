@@ -51,7 +51,7 @@ export default function DashboardPage() {
 
   const navigationItems = [
     { name: "Dashboard", icon: BarChart3, href: "/dashboard", active: true },
-    { name: "Trade with Amiin", icon: TrendingUp, href: "/trade", subtitle: "Broker partnership" },
+    { name: "Recommended Broker", icon: TrendingUp, href: "/trade", subtitle: "Broker partnership" },
     { name: "Signals", icon: TrendingUp, href: "/signals", subtitle: "Premium trading signals" },
     { name: "Course", icon: BookOpen, href: "/course", subtitle: "Strategy Blueprint" },
     { name: "One on One", icon: Users, href: "/coaching", subtitle: "Personal coaching" },
@@ -71,7 +71,7 @@ export default function DashboardPage() {
   const dashboardCards = [
     // First Row
     {
-      title: "Trade with Amiin",
+      title: "Recommended Broker",
       subtitle: "Broker partnership",
       icon: TrendingUp,
       color: "bg-red-500/20 text-red-400",
@@ -128,7 +128,7 @@ export default function DashboardPage() {
       href: "/booking",
     },
     {
-      title: "The GOAT Strategy",
+      title: "Courses",
       subtitle: "Complete course - $199",
       icon: BookOpen,
       color: "bg-teal-500/20 text-teal-400",

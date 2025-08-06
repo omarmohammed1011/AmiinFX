@@ -1,20 +1,31 @@
 "use client"
 
 import { useState } from "react"
+import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import Link from "next/link"
 import { ArrowLeft, TrendingUp, Smartphone, Mail, Check, Star } from "lucide-react"
 
-export default function SignalsPage() {
+export default function Page() {
   const [selectedPlan, setSelectedPlan] = useState<string | null>(null)
+  const router = useRouter()
+
+  // Map plan name to checkout slug
+  const planSlugMap: Record<string, string> = {
+    "1 Month": "signals",
+    "3 Months": "signals",
+    "Lifetime Access": "signals",
+  }
 
   const handleSubscribe = (plan: string, price: string) => {
     setSelectedPlan(plan)
     setTimeout(() => {
-      alert(`Subscription successful for ${plan} at ${price}! You'll receive your first signals within 24 hours.`)
+      const slug = planSlugMap[plan] || "signals"
+      const encodedPlan = encodeURIComponent(plan)
+      router.push(`/checkout/${slug}?plan=${encodedPlan}`)
       setSelectedPlan(null)
-    }, 2000)
+    }, 1000)
   }
 
   const plans = [
@@ -201,3 +212,4 @@ export default function SignalsPage() {
     </div>
   )
 }
+
